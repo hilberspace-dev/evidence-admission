@@ -36,8 +36,9 @@ node src/resolve-run-figures.mjs --evidence-root <dir> report.md [more.md …]
 **Push-ref guard** (`src/check-push-ref.mjs`, run by `.githooks/pre-push`).
 Reads the ref lines git gives a pre-push hook and refuses any push that would
 update, create or delete a protected ref (default `refs/heads/main`) on any
-remote, so that changes reach it only through a merged pull request. It is for
-repositories where server-side branch protection is not available. Exit codes:
+remote, so that a change reaches it through a pull request unless the author
+bypasses the hook on purpose. It is a client-side stand-in for repositories
+where server-side branch protection is not available. Exit codes:
 **0** clear (or bypassed with `EA_ALLOW_PROTECTED_PUSH=1`, which prints a
 notice), **1** refused.
 
@@ -46,7 +47,8 @@ notice), **1** refused.
 probed, on a line of its own: `Probes: <what was mutated> -> RED (<observed
 failure>)` or `Probes: none - <reason>`. A bare `Probes: none` and an empty
 `Probes:` are refused. Merge, revert, fixup and squash commits, deletions and
-exempt files (tests, by default) never need the line. The gate checks that the
+exempt files (by default `.test.js`, `.test.mjs`, `.spec.js` and `.spec.mjs`
+files) never need the line. The gate checks that the
 declaration is present, not that it is true; that stays the reviewer's job.
 Exit codes: **0** accepted (or skipped with `EA_SKIP_PROBE_GATE=1`), **1**
 refused.
@@ -81,7 +83,9 @@ here they are not checked at all.
 
 ## Install
 
-Requirements: Node 24.2.0 or later (`import.meta.main`) and git.
+Requirements: Node 24.2.0 or later and git. The CLIs rely on `import.meta.main`,
+which Node's documentation still marks as early-development; if its behaviour
+changes, the checks refuse rather than silently pass.
 
 ```sh
 # in this repository
