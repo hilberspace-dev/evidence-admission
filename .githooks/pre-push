@@ -1,0 +1,5 @@
+#!/bin/sh
+# Refuses a push that would update a protected ref (default: refs/heads/main).
+# git passes the ref lines on stdin; they are inherited by the checker.
+# Bypass: EA_ALLOW_PROTECTED_PUSH=1 git push ...
+exec node "$(dirname "$0")/../src/check-push-ref.mjs"

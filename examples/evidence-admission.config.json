@@ -1,0 +1,7 @@
+{
+  "protectedRefs": ["refs/heads/main"],
+  "runtimePathPattern": "^(src|server|scripts|lib)/",
+  "exemptPathPattern": "\\.(test|spec)\\.m?js$",
+  "evidenceRoot": ".evidence/",
+  "trackedPathPattern": "^docs/"
+}
