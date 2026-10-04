@@ -48,11 +48,8 @@ say('reading prose. The data below is made up; the checks are the real ones.');
 rule('1. Figure resolver: does the number in the write-up match the run file?');
 say('A figure in a memo carries a marker inside an HTML comment, naming the run');
 say('file and the value it was copied from. Readers see only the figure:');
-const memoLine = readFileSync(path.join(ROOT, 'examples', 'memo-match.md'), 'utf8')
-  .split(/\r?\n/)
-  .find((l) => l.includes('[r:run.json#summary.score]'));
 say('');
-say(`    ${memoLine ?? '(example line not found)'}`);
+say('    The mean score was <!--[r:run.json#summary.score]-->0.873');
 say('');
 say('The resolver opens examples/run.json, reads summary.score and compares it');
 say('with the written figure at the figure\'s own printed precision.');
