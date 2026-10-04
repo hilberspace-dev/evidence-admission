@@ -3,7 +3,8 @@
 Every value in this folder is synthetic. Run the commands from the repository
 root with Node 24.2 or later. The output below was observed on 4 October 2026
 on Windows (Node 24.13.0, Git Bash); the absolute paths in it are that
-machine's.
+machine's. `npm run demo` runs every command below in order, with a line of
+narration and the observed exit code after each one.
 
 ## Files
 
