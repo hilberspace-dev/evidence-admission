@@ -1,6 +1,7 @@
 # evidence-admission
 
 [![test](https://github.com/hilberspace-dev/evidence-admission/actions/workflows/test.yml/badge.svg)](https://github.com/hilberspace-dev/evidence-admission/actions/workflows/test.yml)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/hilberspace-dev/evidence-admission?quickstart=1)
 
 An evidence-admission layer for agent-run computational research: three small
 checks that run where an agent's work enters a repository. A marked figure in
@@ -15,6 +16,30 @@ private computational research programme, where the original checkers have
 been in daily use since September 2026. This extract (renamed flags, a
 configuration file, changed probe-gate defaults) has so far run only in its own
 tests; no external users yet. Version 0.1.0. Zero dependencies.
+
+## Try it in two minutes
+
+**In the browser.** Open the repository in GitHub Codespaces (the badge above,
+or https://codespaces.new/hilberspace-dev/evidence-admission?quickstart=1; a
+GitHub account is needed). The container has Node 24, `npm test` runs while it
+is created, and when the terminal attaches it runs `npm run demo`: seven
+commands on the synthetic examples, each printed with its output, its exit
+code and one line on what that exit code means for a research report. Run
+`npm run demo` again at any time.
+
+**Locally.** With Node 24.2 or later and git:
+
+```sh
+git clone https://github.com/hilberspace-dev/evidence-admission
+cd evidence-admission
+npm test       # 70 tests, no dependencies
+npm run demo   # the narrated demo
+```
+
+The demo checks itself: it compares the seven exit codes it observed with the
+seven it expects (resolver 0, 1, 2; push guard 1, 0; probe gate 1, 0) and exits
+1, naming the difference, if any of them disagree. `examples/README.md` lists
+the same commands with their recorded output.
 
 ## The three executable checks
 

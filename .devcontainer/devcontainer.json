@@ -1,0 +1,11 @@
+{
+  "name": "evidence-admission",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
+  "postCreateCommand": "npm test",
+  "postAttachCommand": "node scripts/demo.mjs",
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["README.md"]
+    }
+  }
+}
