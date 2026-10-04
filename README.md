@@ -1,5 +1,7 @@
 # evidence-admission
 
+[![test](https://github.com/hilberspace-dev/evidence-admission/actions/workflows/test.yml/badge.svg)](https://github.com/hilberspace-dev/evidence-admission/actions/workflows/test.yml)
+
 An evidence-admission layer for agent-run computational research: three small
 checks that run where an agent's work enters a repository. A marked figure in
 a write-up must resolve to the run file it was copied from; a commit that
