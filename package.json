@@ -1,0 +1,15 @@
+{
+  "name": "evidence-admission",
+  "version": "0.1.0",
+  "description": "An evidence-admission layer for agent-run computational research: a figure resolver, a push-ref guard and a probe-declaration gate.",
+  "license": "MIT",
+  "author": "Serhat Atılgan",
+  "type": "module",
+  "engines": {
+    "node": ">=24.2.0"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "install-hooks": "node scripts/install-hooks.mjs"
+  }
+}

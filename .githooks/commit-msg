@@ -1,0 +1,5 @@
+#!/bin/sh
+# Refuses a commit that stages runtime files without a "Probes:" line.
+# The checker is resolved next to this hook, so core.hooksPath may point here
+# from another repository. Bypass: EA_SKIP_PROBE_GATE=1 git commit ...
+exec node "$(dirname "$0")/../src/check-probe-declaration.mjs" "$1"

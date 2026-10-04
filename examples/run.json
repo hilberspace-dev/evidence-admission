@@ -1,0 +1,8 @@
+{
+  "trial": "example-1",
+  "summary": { "count": 1240, "score": 0.873, "latency_ms": 41.6 },
+  "rows": [
+    { "id": "a", "score": 0.91 },
+    { "id": "b", "score": 0.84 }
+  ]
+}
