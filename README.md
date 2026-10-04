@@ -132,8 +132,12 @@ expression makes every check refuse rather than fall back to the defaults.
   also has it). Where `import.meta.main` is undefined the three checks refuse
   rather than silently pass; the hook installer does not check the Node version
   (on an older Node it exits 0 and installs nothing).
-- The test suite has been run on Windows only. The CI workflow for Ubuntu and
-  Windows is included but has not run yet.
+- The test suite has been run locally on Windows; the CI workflow has passed on
+  Ubuntu and Windows (GitHub Actions, 4 October 2026). No other platform has
+  been tried.
+- The merge, revert, fixup and squash exemption of the probe gate is decided by
+  the commit message's prefix alone; a message that merely starts with one of
+  those words is exempt too.
 - There is no measurement of benefit. `PREREGISTRATION.md` is a skeleton for
   the evaluation that would test whether these checks reduce unsupported
   claims; nothing in it has been run.
